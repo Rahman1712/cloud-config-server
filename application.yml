@@ -6,3 +6,43 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+user:
+  service:
+    api:
+      host: http://USER-SERVICE/users
+      url:
+        demo: ${user.service.api.host}/api/v1/user-to-admin/demo
+        getall: ${user.service.api.host}/api/v1/user-to-admin/get/allUsers
+        getbyid: ${user.service.api.host}/api/v1/user-to-admin/getbyid/
+        update_nonlocked: ${user.service.api.host}/api/v1/user-to-admin/update/nonlocked/byid/
+
+therapist:
+  service:
+    api:
+      host: http://THERAPIST-SERVICE/therapists
+      url:
+        getall: ${therapist.service.api.host}/api/v1/public/get/allTherapists
+        getbyid: ${therapist.service.api.host}/api/v1/therapist-to-admin/getbyid/
+        activate: ${therapist.service.api.host}/api/v1/therapist-to-admin/activate/byid/
+        enabled: ${therapist.service.api.host}/api/v1/therapist-to-admin/enabled/byid/
+        update_categories: ${therapist.service.api.host}/api/v1/therapist-to-admin/update-categories/byid/
+        all-reviews: ${therapist.service.api.host}/api/v1/public-to-admin/all-reviews
+        count-reviews: ${therapist.service.api.host}/api/v1/public-to-admin/count-reviews
+        byid-review: ${therapist.service.api.host}/api/v1/public-to-admin/byid-review/
+        all-bookings: ${therapist.service.api.host}/api/v1/public-to-admin/all-bookings
+        count-bookings: ${therapist.service.api.host}/api/v1/public-to-admin/count-bookings
+        byid-booking: ${therapist.service.api.host}/api/v1/public-to-admin/byid-booking/
+        all-payments: ${therapist.service.api.host}/api/v1/public-to-admin/all-payments
+        count-payments: ${therapist.service.api.host}/api/v1/public-to-admin/count-payments
+        byid-payment: ${therapist.service.api.host}/api/v1/public-to-admin/byid-payment/
+
+category:
+  service:
+    api:
+      host: http://THERAPIST-SERVICE/therapists
+      url:
+        add: ${category.service.api.host}/api/v1/therapist-to-admin/category/add
+        delete: ${category.service.api.host}/api/v1/therapist-to-admin/category/delete/
+        update: ${category.service.api.host}/api/v1/therapist-to-admin/category/update/
+
