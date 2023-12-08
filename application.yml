@@ -1,11 +1,11 @@
 eureka:
   instance:
-    hostname: 3.109.202.83
+    hostname: 52.66.178.202
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://3.109.202.83:8761/eureka/
+      defaultZone: http://52.66.178.202:8761/eureka/
 cors:
   set:
     allowed:
