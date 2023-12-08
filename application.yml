@@ -6,6 +6,18 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://3.109.202.83:8761/eureka/
+cors:
+  set:
+    allowed:
+      origins: http://localhost:5173/,
+               http://localhost:3000/,
+               http://localhost:4200/,
+               http://localhost:8989/
+api:
+  redirect:
+    uris: 
+       http://localhost:3000/oauth2/redirect,
+       http://localhost:5173/oauth2/redirect
 user:
   service:
     api:
