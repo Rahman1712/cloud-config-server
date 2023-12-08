@@ -6,7 +6,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://3.109.202.83:8761/eureka/
-
 user:
   service:
     api:
@@ -17,7 +16,6 @@ user:
         getbyid: ${user.service.api.host}/api/v1/user-to-admin/getbyid/
         update_nonlocked: ${user.service.api.host}/api/v1/user-to-admin/update/nonlocked/byid/
         users_by_ids: ${user.service.api.host}/api/v1/user-to-therapist/users-byids
-
 therapist:
   service:
     api:
@@ -37,7 +35,13 @@ therapist:
         all-payments: ${therapist.service.api.host}/api/v1/public-to-admin/all-payments
         count-payments: ${therapist.service.api.host}/api/v1/public-to-admin/count-payments
         byid-payment: ${therapist.service.api.host}/api/v1/public-to-admin/byid-payment/
-
+        booking: ${therapist.service.api.host}/api/v1/therapist-to-user/book
+        reschedule: ${therapist.service.api.host}/api/v1/therapist-to-user/book-reschedule/byid/
+        update_payment: ${therapist.service.api.host}/api/v1/therapist-to-user/
+        booking-byid: ${therapist.service.api.host}/api/v1/therapist-to-user/booking-byid/
+        bookings-byuser: ${therapist.service.api.host}/api/v1/therapist-to-user/booking-byuserid/
+        cancel_booking: ${therapist.service.api.host}/api/v1/therapist-to-user/cancel/
+        therapists_byuserid: ${therapist.service.api.host}/api/v1/therapist-to-user/book-therapists/by-user/
 category:
   service:
     api:
@@ -46,4 +50,23 @@ category:
         add: ${category.service.api.host}/api/v1/therapist-to-admin/category/add
         delete: ${category.service.api.host}/api/v1/therapist-to-admin/category/delete/
         update: ${category.service.api.host}/api/v1/therapist-to-admin/category/update/
-
+review:
+  service:
+    api:
+      host: http://THERAPIST-SERVICE/therapists
+      url:
+       create: ${review.service.api.host}/api/v1/reviews/create
+       update_review: ${review.service.api.host}/api/v1/reviews/update/
+       delete_review: ${review.service.api.host}/api/v1/reviews/delete/
+       by_user: ${review.service.api.host}/api/v1/reviews/user/
+       by_therapist: ${review.service.api.host}/api/v1/reviews/therapist/
+       by_user_therapist: ${review.service.api.host}/api/v1/reviews
+       by_booking: ${review.service.api.host}/api/v1/reviews/booking/
+chat:
+  service:
+    api:
+      host: http://THERAPIST-SERVICE/therapists
+      url:
+       create: ${chat.service.api.host}/api/v1/messages-to-user/create
+       chat_byroomid: ${chat.service.api.host}/api/v1/messages-to-user/by-roomId/
+       therapistsinfo_byuserid: ${chat.service.api.host}/api/v1/messages-to-user/therapists/
