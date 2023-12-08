@@ -16,6 +16,7 @@ user:
         getall: ${user.service.api.host}/api/v1/user-to-admin/get/allUsers
         getbyid: ${user.service.api.host}/api/v1/user-to-admin/getbyid/
         update_nonlocked: ${user.service.api.host}/api/v1/user-to-admin/update/nonlocked/byid/
+        users_by_ids: ${user.service.api.host}/api/v1/user-to-therapist/users-byids
 
 therapist:
   service:
