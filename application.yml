@@ -9,7 +9,8 @@ eureka:
 cors:
   set:
     allowed:
-      origins: http://localhost:5173/,
+      origins: https://medicare-eta.vercel.app/,
+               http://localhost:5173/,
                http://localhost:3000/,
                http://localhost:4200/,
                http://localhost:8989/
