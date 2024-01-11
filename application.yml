@@ -10,6 +10,8 @@ cors:
   set:
     allowed:
       origins: https://medicare-eta.vercel.app/,
+               https://medicare-admin.vercel.app/,
+               https://medicarehealth.website/,
                http://localhost:5173/,
                http://localhost:3000/,
                http://localhost:4200/,
